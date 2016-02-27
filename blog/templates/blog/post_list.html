@@ -1,9 +1,22 @@
-<<html>
+<html>
     <head>
         <title>Dannette's blog</title>
     </head>
     <body>
-        <p>Hi there!</p>
-        <p>It works!</p>
+      <div>
+        <CENTER>
+          <!-- <h1><a href="/">Dannette's blog</a></h1> -->
+         <img src="http://www.dannettehaley.com/images/DH_Logo.png" alt="Mountain View">
+        </CENTER>
+      </div>
+
+      {% for post in posts %}
+          <div>
+              <p><b>published: {{ post.published_date }}</b></p>
+              <h2><a href="">{{ post.title }}</a></h2>
+              <p>{{ post.text|linebreaks }}</p>
+            <hr>
+          </div>
+      {% endfor %}
     </body>
 </html>
